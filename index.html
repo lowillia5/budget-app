@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Budget</title>
+<meta name="description" content="A simple, friendly personal budget tracker that syncs across your devices." />
+<meta name="theme-color" content="#fcfcfb" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#1a1a19" media="(prefers-color-scheme: dark)" />
+
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="icons/icon-192.png" />
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="Budget" />
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div id="app" class="app">
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="topbar-brand">
+      <span class="brand-mark" aria-hidden="true">🪙</span>
+      <span class="brand-name">Budget</span>
+    </div>
+    <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle theme" title="Toggle theme">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.4 5.4 0 0 1-7.54-7.54A9 9 0 0 0 12 3Z" fill="currentColor"/></svg>
+    </button>
+  </header>
+
+  <!-- Side nav (desktop) / bottom nav (mobile) -->
+  <nav class="nav" aria-label="Main">
+    <button class="nav-item" data-route="dashboard" type="button">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 13h8V3H3v10Zm0 8h8v-6H3v6Zm10 0h8V11h-8v10Zm0-18v6h8V3h-8Z" fill="currentColor"/></svg>
+      <span>Dashboard</span>
+    </button>
+    <button class="nav-item" data-route="transactions" type="button">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 6h16v2H4V6Zm0 5h16v2H4v-2Zm0 5h10v2H4v-2Z" fill="currentColor"/></svg>
+      <span>Transactions</span>
+    </button>
+    <button class="nav-item" data-route="categories" type="button">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 4h7v7H4V4Zm9 0h7v7h-7V4Zm0 9h7v7h-7v-7ZM4 13h7v7H4v-7Z" fill="currentColor"/></svg>
+      <span>Categories</span>
+    </button>
+    <button class="nav-item" data-route="accounts" type="button">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 7h18v2H3V7Zm0 4h18v6H3v-6Zm2 2v2h4v-2H5Z" fill="currentColor"/></svg>
+      <span>Accounts</span>
+    </button>
+    <button class="nav-item" data-route="settings" type="button">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm8.4 4a7.9 7.9 0 0 0-.15-1.5l2.1-1.6-2-3.5-2.5 1a8 8 0 0 0-2.6-1.5L14.8 2h-4l-.45 2.9a8 8 0 0 0-2.6 1.5l-2.5-1-2 3.5 2.1 1.6a8 8 0 0 0 0 3l-2.1 1.6 2 3.5 2.5-1a8 8 0 0 0 2.6 1.5L10.8 22h4l.45-2.9a8 8 0 0 0 2.6-1.5l2.5 1 2-3.5-2.1-1.6c.1-.5.15-1 .15-1.5Z" fill="currentColor"/></svg>
+      <span>Settings</span>
+    </button>
+  </nav>
+
+  <main id="view" class="view" tabindex="-1"></main>
+
+  <button id="fab-add" class="fab" type="button" aria-label="Add transaction" title="Add transaction">
+    <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6V5Z" fill="currentColor"/></svg>
+  </button>
+</div>
+
+<div id="modal-root"></div>
+<div id="toast-root" class="toast-root" aria-live="polite"></div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
